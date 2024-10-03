@@ -1,0 +1,3 @@
+
+Right so we want to get the electron app to show with rsbuild, which means building the main and preload, then running the dev server with the renderer.
+
