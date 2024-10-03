@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Main Process",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceRoot}/build_rspack",
+      "runtimeExecutable": "/Users/andrewschreiber/.nvm/versions/node/v20.17.0/lib/node_modules/bun/bin/bun.exe",
+      "runtimeArgs": ["electron", "loader.js"]
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug All",
+      "configurations": ["Debug Main Process", "Debug Renderer Process"],
+      "presentation": {
+        "order": 1
+      }
+    }
+  ]
+}
