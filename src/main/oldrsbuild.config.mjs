@@ -11,7 +11,7 @@ export default defineConfig({
   },
   source: {
     entry: {
-      loader: './index.ts'
+      main: './index.ts'
     }
   },
   output: {

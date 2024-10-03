@@ -7,7 +7,7 @@
       "request": "launch",
       "cwd": "${workspaceRoot}/build_rspack",
       "runtimeExecutable": "/Users/andrewschreiber/.nvm/versions/node/v20.17.0/lib/node_modules/bun/bin/bun.exe",
-      "runtimeArgs": ["electron", "loader.js"]
+      "runtimeArgs": ["electron", "main.js"]
     }
   ],
   "compounds": [

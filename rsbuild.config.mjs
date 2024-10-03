@@ -12,7 +12,7 @@ export default defineConfig({
       },
       source: {
         entry: {
-          loader: './src/main/index.ts'
+          main: './src/main/index.ts'
         }
       },
       output: {

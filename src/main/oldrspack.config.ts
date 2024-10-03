@@ -2,13 +2,6 @@ import { Configuration } from '@rspack/cli'
 import path from 'path'
 const { RsdoctorRspackPlugin } = require('@rsdoctor/rspack-plugin')
 
-// const { Configuration } = require('@rspack/cli')
-
-/**
- * TODO: rsbuild cannot build electron product
- * So keep using @rspack/cli as compiler
- */
-
 const tsConfigPath = path.resolve(process.cwd(), '../../tsconfig.json')
 const configuration: Configuration = {
   mode: 'production',
@@ -18,7 +11,7 @@ const configuration: Configuration = {
     extensions: ['.ts', '.js']
   },
   entry: {
-    loader: path.join(__dirname, 'index.ts')
+    main: path.join(__dirname, 'index.ts')
   },
   output: {
     path: path.join(process.cwd(), '../../build_rspack'),
