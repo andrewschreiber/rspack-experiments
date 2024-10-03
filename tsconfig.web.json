@@ -1,6 +1,6 @@
 {
   "extends": "@electron-toolkit/tsconfig/tsconfig.web.json",
-  "include": ["src/renderer/**/*.ts", "src/preload/*.d.ts", "src/renderer/rspack.config.ts", "src/renderer/rsbuild.config.mjs", "src/renderer/rsbuild.config.mjs"],
+  "include": ["src/renderer/**/*.ts", "src/preload/*.d.ts", "src/renderer/rspack.config.ts", "src/renderer/oldrsbuild.config.mjs", "src/renderer/oldrsbuild.config.mjs"],
   "compilerOptions": {
     "composite": true
   }
