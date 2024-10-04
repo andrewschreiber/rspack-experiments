@@ -1,0 +1,13 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "problemMatcher": [],
+      "isBackground": false,
+      "label": "Run Dev",
+      "detail": "Starts the Electron app in development mode",
+      "command": "/Users/andrewschreiber/.nvm/versions/node/v20.17.0/lib/node_modules/bun/bin/bun.exe run dev"
+    }
+  ]
+}
