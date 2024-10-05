@@ -1,11 +1,16 @@
+console.log('Start time', new Date().toISOString())
 import { app, shell, BrowserWindow, ipcMain } from 'electron'
+console.log('Post import', new Date().toISOString())
+
 // import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 // import icon from '../../resources/icon.png?asset'
 
 async function createWindow(): Promise<void> {
+  console.log('Create window', new Date().toISOString())
+
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 900,
+    width: 1000,
     height: 670,
     autoHideMenuBar: true,
     // ...(process.platform === 'linux' ? { icon } : {}),
@@ -13,9 +18,12 @@ async function createWindow(): Promise<void> {
       // preload: join(__dirname, '../preload/index.js'),
     },
   })
+  console.log('Window created', new Date().toISOString())
 
   mainWindow.on('ready-to-show', () => {
-    app.quit()
+    console.log('Ready to show', new Date().toISOString())
+
+    // app.quit()
     mainWindow.show()
   })
 
@@ -30,6 +38,8 @@ async function createWindow(): Promise<void> {
   // import { join } from 'path'
 
   mainWindow.loadURL('http://localhost:9527/renderer')
+  console.log('Loaded URL', new Date().toISOString())
+
   return
   const { join } = await import('path')
   if (process.env.NODE_ENV !== 'production') {

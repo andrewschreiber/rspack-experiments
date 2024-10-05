@@ -2,13 +2,12 @@ import { defineConfig, RsbuildConfig, EnvironmentConfig } from '@rsbuild/core'
 import path from 'path'
 
 import { spawn } from 'child_process'
-import { write } from 'fs'
 
 const cwd = process.cwd()
 
 export default defineConfig(async ({ env, command }): Promise<RsbuildConfig> => {
   if (command === 'dev') {
-    const args = ['electron', 'dist/main.js']
+    const args = ['electron', 'dist/electron_main.js']
     spawn('bunx', args, {
       shell: true,
       stdio: 'inherit',
@@ -28,7 +27,7 @@ export default defineConfig(async ({ env, command }): Promise<RsbuildConfig> => 
           minimize: false,
         },
         entry: {
-          preload: './src/preload/index.ts',
+          electron_preload: './src/preload/index.ts',
         },
         output: {
           path: path.join(cwd, 'dist'),
@@ -67,7 +66,7 @@ export default defineConfig(async ({ env, command }): Promise<RsbuildConfig> => 
           minimize: false,
         },
         entry: {
-          main: './src/main/index.ts',
+          electron_main: './src/main/index.ts',
         },
         output: {
           path: path.join(cwd, 'dist'),
@@ -120,6 +119,8 @@ export default defineConfig(async ({ env, command }): Promise<RsbuildConfig> => 
     },
   }
 
+  const diskFiles = new Set(['electron_preload.js', 'electron_main.js'])
+
   return {
     root: __dirname,
     environments: {
@@ -131,7 +132,14 @@ export default defineConfig(async ({ env, command }): Promise<RsbuildConfig> => 
       port: 9527,
     },
     dev: {
-      writeToDisk: true,
+      writeToDisk: (filename) => {
+        // Electron needs preload.js and main.js to be written to disk
+        // Serve UI as server
+        // /Users/andrewschreiber/git/electron-rspack-test/my-app/electron-app/dist/main.js -> main.js
+        const lastSlashIndex = filename.lastIndexOf('/')
+        const finalFilename = filename.substring(lastSlashIndex + 1)
+        return diskFiles.has(finalFilename)
+      },
     },
   }
 })

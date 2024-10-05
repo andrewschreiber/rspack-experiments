@@ -19,8 +19,8 @@
     "build:win": "npm run build && electron-builder --win",
     "build:mac": "npm run build && electron-builder --mac",
     "build:linux": "npm run build && electron-builder --linux",
-    "gogo": "rsbuild build && electron dist/main.js",
-    "run:main": "electron dist/main.js"
+    "gogo": "rsbuild dev",
+    "run:main": "electron dist/electron_main.js"
   },
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.1",

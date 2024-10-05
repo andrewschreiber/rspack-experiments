@@ -8,8 +8,7 @@
       "runtimeVersion": "20.17.0",
       "cwd": "${workspaceRoot}",
       "runtimeExecutable": "/Users/andrewschreiber/.nvm/versions/node/v20.17.0/lib/node_modules/bun/bin/bun.exe",
-      "runtimeArgs": ["run", "dev"]
-      // "preLaunchTask": "Run Dev"
+      "runtimeArgs": ["rsbuild", "dev"]
     },
     {
       "name": "Debug Main Process",
