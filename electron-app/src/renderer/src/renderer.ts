@@ -5,6 +5,7 @@ function init(): void {
 }
 
 function doAThing(): void {
+  console.log('doAThing')
   const versions = window.electron.process.versions
   replaceText('.electron-version', `Electron v${versions.electron}`)
   replaceText('.chrome-version', `Chromium v${versions.chrome}`)

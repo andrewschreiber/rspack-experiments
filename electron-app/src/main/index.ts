@@ -19,6 +19,7 @@ async function createWindow(): Promise<void> {
     },
   })
   console.log('Window created', new Date().toISOString())
+  console.log('Window created', new Date().toISOString())
 
   mainWindow.on('ready-to-show', () => {
     console.log('Ready to show', new Date().toISOString())
