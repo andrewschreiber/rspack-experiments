@@ -4,7 +4,6 @@ import { spawn } from 'child_process'
 import { RspackOptions } from '@rspack/core'
 
 const cwd = process.cwd()
-// Configure main and preload processes
 export default defineConfig(async (config): Promise<RspackOptions> => {
   if (config.command === 'dev') {
     const args = ['dist/electron_main.js']
