@@ -1,4 +1,5 @@
 import { defineConfig } from '@rspack/cli'
+import path from 'path'
 
 const cwd = process.cwd()
 
