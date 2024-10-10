@@ -16,5 +16,12 @@ export default defineConfig(async (config): Promise<RspackOptions> => {
     optimization: {
       minimize: false,
     },
+    devServer: {
+      port: 9527,
+      static: {
+        directory: path.join(cwd, 'dist'),
+        watch: true,
+      },
+    },
   }
 })
