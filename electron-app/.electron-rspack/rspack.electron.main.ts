@@ -1,5 +1,5 @@
 import { defineConfig } from '@rspack/cli'
-import path from 'path'
+import * as path from 'path'
 import { spawn } from 'child_process'
 import { RspackOptions } from '@rspack/core'
 
